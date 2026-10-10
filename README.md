@@ -18,10 +18,13 @@ terms and refund policies. This repository's Releases also hold the app itself.
   key on 3 phones.
 - **Publish:** `.github/workflows/static.yml` deploys the site to GitHub Pages
   on every push to `main`, exactly as the files are (`.nojekyll`, no build).
-- **Releases page:** `releases.html` lists every release (latest stable,
-  then the beta, then older stable versions) with its notes and download,
-  read live from this repository's releases through GitHub's API, so it never
-  needs updating by hand.
+- **Releases:** `releases.js` reads this repository's releases live from
+  GitHub's API. The main page's Releases section shows the beta (while it's
+  newer than stable) and the latest stable; `releases.html` lists every
+  version. Neither needs updating by hand.
+- **Phones:** below 760px wide, the header links give way to a bottom pill
+  navigation (Home, Features, Releases, FAQ, Community) that marks the
+  section being read.
 - **Downloads and updates:** the private Pro repository's release workflow
   publishes every stable version as its own release, marked Latest, and keeps
   the newest beta in the `beta` pre-release. Each holds `AtmoEnginePro.apk`

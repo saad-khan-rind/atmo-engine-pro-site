@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Releases · Atmo Engine Pro</title>
   <meta name="description" content="Every version of Atmo Engine Pro, stable and beta, with what's new and a download for each.">
   <meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
@@ -27,7 +27,7 @@
       <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="30" height="30">Atmo Engine Pro</a>
       <nav aria-label="Main">
         <a class="optional" href="index.html">Home</a>
-        <a class="optional" href="releases.html" aria-current="page">Releases</a>
+        <a class="optional" href="index.html#releases">Releases</a>
         <a class="button small" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro</a>
       </nav>
     </div>
@@ -72,77 +72,15 @@
     </div>
   </footer>
 
-  <script>
-    // The releases this site's repository holds, read live from GitHub, so the
-    // page is always current without rebuilding the site.
-    const REPO = "saad-khan-rind/atmo-engine-pro-site";
-    const list = document.getElementById("release-list");
+  <nav class="bottom-nav" aria-label="Sections">
+    <a href="index.html#main" data-section="home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+    <a href="index.html#features" data-section="features"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg><span>Features</span></a>
+    <a href="index.html#releases" data-section="releases" aria-current="page"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Releases</span></a>
+    <a href="index.html#faq" data-section="faq"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>FAQ</span></a>
+    <a href="index.html#contact" data-section="community"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg><span>Community</span></a>
+  </nav>
 
-    function el(tag, className, text) {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
-      return node;
-    }
-
-    function fallback() {
-      list.replaceChildren(el("p", "muted"));
-      list.firstChild.append(
-        "Couldn't load the list right now. ",
-        Object.assign(el("a", "", "Download the latest stable version"), {
-          href: `https://github.com/${REPO}/releases/latest/download/AtmoEnginePro.apk`
-        }),
-        " or see every version on ",
-        Object.assign(el("a", "", "GitHub"), { href: `https://github.com/${REPO}/releases` }),
-        "."
-      );
-    }
-
-    function card(release, isLatest) {
-      const apk = release.assets.find((a) => a.name === "AtmoEnginePro.apk");
-      const article = el("article", "card release" + (isLatest ? " latest" : ""));
-      const head = el("div", "release-head");
-      const name = release.name.replace(/^Atmo Engine Pro /, "").replace(/ \(beta\)$/, "");
-      head.append(el("h2", "", name));
-      if (isLatest) head.append(el("span", "badge stable", "Latest stable"));
-      else if (release.prerelease) head.append(el("span", "badge beta", "Beta, newer than stable"));
-      article.append(head);
-
-      const date = new Date(release.published_at || release.created_at);
-      article.append(el("p", "small muted", date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })));
-
-      const notes = (release.body || "").split("\n").map((l) => l.replace(/^•\s*/, "").trim()).filter(Boolean);
-      if (notes.length) {
-        const ul = el("ul", "notes");
-        notes.forEach((n) => ul.append(el("li", "", n)));
-        article.append(ul);
-      }
-
-      if (apk) {
-        const a = el("a", isLatest ? "button" : "button ghost");
-        a.href = apk.browser_download_url;
-        a.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>';
-        a.append(`Download ${name} (${(apk.size / 1048576).toFixed(1)} MB)`);
-        article.append(a);
-      }
-      return article;
-    }
-
-    fetch(`https://api.github.com/repos/${REPO}/releases?per_page=30`, { headers: { Accept: "application/vnd.github+json" } })
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((releases) => {
-        const published = releases.filter((r) => !r.draft);
-        if (!published.length) return fallback();
-        const stable = published.filter((r) => !r.prerelease)
-          .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
-        // The rolling beta is only worth showing while it's ahead of the latest stable.
-        const version = (r) => (r.name.match(/(\d+)\.(\d+)\.(\d+)/) || []).slice(1).map(Number);
-        const newer = (a, b) => { for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return (a[i] || 0) > (b[i] || 0); return false; };
-        const beta = published.filter((r) => r.prerelease && (!stable[0] || newer(version(r), version(stable[0]))));
-        const ordered = [...beta, stable[0], ...stable.slice(1)].filter(Boolean);
-        list.replaceChildren(...ordered.map((r) => card(r, r === stable[0])));
-      })
-      .catch(fallback);
-  </script>
+  <script src="releases.js"></script>
+  <script>renderReleases(document.getElementById("release-list"), { all: true });</script>
 </body>
 </html>
