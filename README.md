@@ -22,7 +22,7 @@ terms and refund policies. This repository's Releases also hold the app itself.
   GitHub's API. The main page's Releases section shows the beta (while it's
   newer than stable) and the latest stable; `releases.html` lists every
   version. Neither needs updating by hand.
-- **Phones:** below 760px wide, the header links give way to a bottom pill
+- **Phones:** below 900px wide, the header links give way to a bottom pill
   navigation (Home, Features, Releases, FAQ, Community) that marks the
   section being read.
 - **Downloads and updates:** the private Pro repository's release workflow

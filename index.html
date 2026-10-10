@@ -47,11 +47,11 @@
     <div class="wrap">
       <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="30" height="30">Atmo Engine Pro</a>
       <nav aria-label="Main">
-        <a class="optional" href="#features">Features</a>
-        <a class="optional" href="#requirements">Requirements</a>
-        <a class="optional" href="#faq">FAQ</a>
-        <a class="optional" href="#contact">Community</a>
-        <a class="optional" href="#releases">Releases</a>
+        <a class="optional" href="#features" data-section="features">Features</a>
+        <a class="optional" href="#requirements" data-section="requirements">Requirements</a>
+        <a class="optional" href="#releases" data-section="releases">Releases</a>
+        <a class="optional" href="#faq" data-section="faq">FAQ</a>
+        <a class="optional" href="#contact" data-section="community">Community</a>
         <a class="button small" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro</a>
       </nav>
     </div>
@@ -310,9 +310,12 @@
   <script>
     renderReleases(document.getElementById("release-list"), { all: false });
 
-    // The bottom bar marks the section being read.
-    const tabs = document.querySelectorAll(".bottom-nav a");
-    const sections = { home: document.querySelector(".hero"), features: "features", releases: "releases", faq: "faq", community: "contact" };
+    // The header (wide screens) and the bottom bar (phones) mark the section being read.
+    const tabs = document.querySelectorAll("a[data-section]");
+    const sections = {
+      home: document.querySelector(".hero"), features: "features", requirements: "requirements",
+      releases: "releases", faq: "faq", community: "contact"
+    };
     const spy = new IntersectionObserver((entries) => {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
