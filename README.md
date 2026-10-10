@@ -28,3 +28,26 @@ terms and refund policies. This repository's Releases also hold the app itself.
     `releases/download/beta/version.json` for users who turned on beta updates.
 
   So don't rename, delete or edit those releases and files by hand.
+
+## Atmo Engine
+
+Atmo Engine Pro is the full version of
+[Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect), the free
+and open-source live wallpaper app, also on
+[Google Play](https://play.google.com/store/apps/details?id=com.saad_khan_rind.atmosphere_effect)
+and [F-Droid](https://f-droid.org/packages/com.saad_khan_rind.atmosphere_effect/).
+
+## Community
+
+- **Atmo Engine Pro:** [Telegram group](https://t.me/atmoenginepro)
+- **Atmo Engine:** [Telegram group](https://t.me/atmosphereEffect)
+
+## Author
+
+**Saad Ullah Khan**
+📍 Passau, Germany
+📧 [khansaad45678900@gmail.com](mailto:khansaad45678900@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/saadullahkhan456)
+💻 [GitHub](https://github.com/saad-khan-rind)
+📄 [Download Resume](https://drive.google.com/uc?export=download&id=1gVGO5wOwkPiNFu0MeO5kcSgEAEfx3MQS)
+🌐 [Portfolio](https://portfolio-frontend-lovat-nine.vercel.app)
