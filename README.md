@@ -11,6 +11,8 @@ terms and refund policies. This repository's Releases also hold the app itself.
 - **Buy:** both Buy links go to the Gumroad product,
   https://khansaad5.gumroad.com/l/atmo-engine-pro (US$2.99). Gumroad takes the
   payment and gives the buyer their licence key and a link to the app here.
+- **Community:** the Pro Telegram group, https://t.me/atmoenginepro, is linked
+  from the site's Community section and every page's footer.
 - **Activate:** the app checks keys with the licence service (a Cloudflare
   Worker, in the private Pro repository), which asks Gumroad and allows each
   key on 3 phones.

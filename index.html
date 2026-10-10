@@ -3,161 +3,272 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atmo Engine Pro</title>
+  <title>Atmo Engine Pro: your wallpaper's clock on your lock screen</title>
   <meta name="description" content="Atmo Engine Pro puts your Atmo wallpaper's own clock on your Android lock screen, with the depth effect, in place of your phone's clock.">
+  <meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf7ff" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Atmo Engine Pro">
+  <meta property="og:description" content="Your wallpaper's clock, on your lock screen, with the person or object in your photo standing in front of it.">
+  <meta property="og:url" content="https://saad-khan-rind.github.io/atmo-engine-pro-site/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h6"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+    <symbol id="mountain" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="#3a1d5e" d="M0 40 L12 28 L22 34 L36 6 L46 22 L58 0 L68 18 L82 8 L100 30 L100 100 L0 100Z"/><path fill="#1c0f36" d="M0 62 L14 46 L26 54 L42 30 L54 44 L64 26 L78 46 L90 38 L100 50 L100 100 L0 100Z"/></symbol>
+  </svg>
+
   <header class="site">
     <div class="wrap">
-      <a class="brand" href="index.html">Atmo Engine Pro</a>
-      <nav>
-        <a href="index.html#features">Features</a>
-        <a href="index.html#requirements">Requirements</a>
-        <a href="index.html#buying">Buy</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#contact">Contact</a>
+      <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="30" height="30">Atmo Engine Pro</a>
+      <nav aria-label="Main">
+        <a class="optional" href="#features">Features</a>
+        <a class="optional" href="#requirements">Requirements</a>
+        <a class="optional" href="#faq">FAQ</a>
+        <a class="optional" href="#contact">Community</a>
+        <a class="button small" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="wrap">
-      <h1>Your wallpaper's clock, on your lock screen</h1>
-      <p class="lead">
-        Atmo Engine Pro is the full version of Atmo Engine, the live wallpaper app. It hides
-        your phone's own lock screen clock behind a piece of your wallpaper, so the only clock
-        you see is Atmo's: the style you picked, with the person or object in your photo
-        standing in front of it.
-      </p>
-
-      <div class="card price">
+      <section class="hero" aria-labelledby="hero-title">
         <div>
-          <div class="amount">US$2.99</div>
-          <div class="note">Pay once, keep it for life. Up to 3 phones.</div>
+          <span class="eyebrow"><span class="dot"></span>The full version of Atmo Engine</span>
+          <h1 id="hero-title">Your wallpaper's clock, <span class="gradient-text">on your lock screen</span></h1>
+          <p class="lead">
+            Atmo Engine Pro hides your phone's own lock screen clock behind a piece of your wallpaper,
+            so the only clock you see is Atmo's: the style you picked, with the person or object in
+            your photo standing in front of it.
+          </p>
+          <div class="actions">
+            <a class="button" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro for US$2.99</a>
+            <a class="button ghost" href="#how">See how it works</a>
+          </div>
+          <ul class="trust">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pay once, keep it for life</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Up to 3 phones</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>14-day refund</li>
+          </ul>
         </div>
-        <a class="button" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro</a>
-      </div>
 
-      <h2 id="features">What you get with Pro</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>One clock, not two</h3>
-          <p>Your phone's clock is covered by the exact bit of wallpaper behind it, so it simply disappears.</p>
+        <div class="phone" role="img" aria-label="A phone lock screen showing a large 10:09 clock with mountains standing in front of it">
+          <div class="screen" aria-hidden="true">
+            <span class="glow a"></span><span class="glow b"></span>
+            <div class="date">FRIDAY, 10 OCTOBER</div>
+            <div class="clock">10:09</div>
+            <svg class="subject"><use href="#mountain"/></svg>
+          </div>
         </div>
-        <div class="card">
-          <h3>Depth that really works</h3>
-          <p>The subject of your photo stays in front of the clock, just like on the home screen.</p>
-        </div>
-        <div class="card">
-          <h3>Gone the moment you unlock</h3>
-          <p>The cover leaves the instant you start unlocking, so your home screen appears cleanly. You can add a few frames of delay if you like.</p>
-        </div>
-        <div class="card">
-          <h3>Everything from Atmo Engine</h3>
-          <p>All the effects, playlists, clock styles and Fine tuning from the free app come with it.</p>
-        </div>
-      </div>
-
-      <h2 id="how">How it works</h2>
-      <p>
-        Pro uses Android's accessibility permission for one thing only: putting a small window
-        over your phone's clock on the lock screen. That window shows the part of your Atmo
-        wallpaper that sits underneath, with its clock. It doesn't read your screen, see your
-        notifications or what you type, or tap anything for you. Your photos never leave your phone.
-      </p>
-      <p>
-        Setting it up takes a minute. Open Atmo Engine Pro, tap the sparkle button next to settings,
-        turn on the permission and drag the cover over your phone's clock. The clock's style,
-        colour and position are set in Fine tuning, the same as always.
-      </p>
-      <p>
-        Pro isn't on Google Play, because Play only allows this permission for accessibility
-        tools. You install it straight from this site.
-      </p>
-
-      <h2 id="requirements">What you need</h2>
-      <ul>
-        <li>Android 13 or newer. The instant hide on unlock needs Android 14 or newer; on Android 13 the cover leaves a moment later.</li>
-        <li>An Atmo wallpaper on your lock screen, with its clock turned on.</li>
-        <li>The accessibility permission for Atmo Engine Pro. Since Pro comes from outside Google Play,
-            Android first asks you to <strong>allow restricted settings</strong> for it. The app shows you how.</li>
-      </ul>
-      <p class="muted small">
-        Every phone maker does the lock screen a little differently, and on a few phones nothing
-        can be drawn over it. If Pro doesn't work on your phone, you get your money back. See the
-        <a href="refund.html">refund policy</a>.
-      </p>
-      <p class="muted small">
-        A heads-up about banking apps: a few banking and payment apps refuse to open, or show a
-        warning, while any accessibility service is turned on. That's their own security rule, and
-        it applies to every app that uses accessibility, not just Pro. See the FAQ below for what to do.
-      </p>
-
-      <h2 id="buying">Buying</h2>
-      <ol>
-        <li><a href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro on Gumroad</a>. You can pay by card or PayPal, and Gumroad
-            adds any sales tax or VAT for your country.</li>
-        <li>Your receipt email takes you to your <strong>licence key</strong> and the app download.
-            Both also stay in your <a href="https://app.gumroad.com/library">Gumroad library</a>.</li>
-        <li>Install the app. The first time, Android asks you to allow installs from your browser or
-            files app, and Google Play Protect may offer to scan it. That's normal for apps from outside
-            Google Play.</li>
-        <li>Open Atmo Engine Pro, tap the sparkle button next to settings, enter your key under
-            <strong>Licence</strong>, and follow <strong>Getting started</strong>.</li>
-      </ol>
-      <p>
-        Already bought Pro? <a href="https://github.com/saad-khan-rind/atmo-engine-pro-site/releases/latest/download/AtmoEnginePro.apk">Download the latest version</a>
-        and enter your key in the app.
-      </p>
-
-      <h2 id="faq">FAQ</h2>
-      <h3>Is it a subscription?</h3>
-      <p>No. You pay once and it's yours.</p>
-      <h3>Can I use it on more than one phone?</h3>
-      <p>Yes, on up to 3 of your own phones at the same time.</p>
-      <h3>I got a new phone. How do I move Pro?</h3>
-      <p>
-        Enter your key on the new phone. If all 3 places are taken, the app lists your phones and
-        you can remove an old one right there. Reinstalling on the same phone doesn't use up a place.
-      </p>
-      <h3>Does it need the internet?</h3>
-      <p>
-        Only now and then. You need a connection to activate. After that, Pro checks your licence and
-        looks for updates about once a day when you're online, and keeps working offline for up to 30 days.
-      </p>
-      <h3>Do I still need the free Atmo Engine?</h3>
-      <p>No. Pro has everything the free app has, so you only need Pro.</p>
-      <h3>Will my banking apps still work?</h3>
-      <p>
-        Most will. A few banking and payment apps won't open, or keep warning you, while any
-        accessibility service is on, because they can't tell which ones are harmless. If one of yours
-        does that, turn off the Atmo Engine Pro lock screen clock in your phone's accessibility settings
-        while you use it, then turn it back on. Your wallpaper keeps working the whole time; only the
-        lock screen clock takes a break.
-      </p>
-      <h3>How do I get updates?</h3>
-      <p>
-        Pro checks for new versions on its own. When one is out, it lets you know with a notification
-        and an <strong>Update available</strong> message with what's new. Tap <strong>Update</strong>
-        and Pro downloads and installs it for you; Android asks you to confirm, and the very first time
-        to allow Pro to install apps. Your wallpaper, settings and licence stay as they are. You can also
-        check yourself in Pro Tools, or <a href="https://github.com/saad-khan-rind/atmo-engine-pro-site/releases/latest/download/AtmoEnginePro.apk">download the latest version</a> here any time.
-      </p>
-      <h3>Can I try new features early?</h3>
-      <p>
-        Yes. Turn on <strong>Beta updates</strong> in Pro Tools and you'll get new versions before
-        they're marked stable. They're usually fine, but they may have the odd rough edge. Turn it off
-        whenever you like.
-      </p>
-
-      <h2 id="contact">Contact</h2>
-      <p>
-        Questions, problems or refunds:
-        <a href="mailto:khansaad45678900@gmail.com">khansaad45678900@gmail.com</a>.
-        If it's about a purchase, please include your order number.
-      </p>
+      </section>
     </div>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="kicker">What you get with Pro</span>
+          <h2>One clock, with real depth</h2>
+          <p class="muted">Everything from the free app, plus a lock screen that finally looks like your wallpaper.</p>
+        </div>
+
+        <div class="compare reveal">
+          <figure>
+            <div class="phone" role="img" aria-label="Without Pro: your phone's own small clock sits on top of everything, next to Atmo's clock">
+              <div class="screen" aria-hidden="true">
+                <span class="glow a"></span><span class="glow b"></span>
+                <div class="stock">10:09</div>
+                <div class="clock">10:09</div>
+                <svg class="subject"><use href="#mountain"/></svg>
+              </div>
+            </div>
+            <figcaption>Without Pro<span>Two clocks: your phone's own sits on top</span></figcaption>
+          </figure>
+          <figure>
+            <div class="phone" role="img" aria-label="With Pro: only Atmo's clock, with the mountains in front of it">
+              <div class="screen" aria-hidden="true">
+                <span class="glow a"></span><span class="glow b"></span>
+                <div class="clock">10:09</div>
+                <svg class="subject"><use href="#mountain"/></svg>
+              </div>
+            </div>
+            <figcaption>With Pro<span>One clock, behind your photo's subject</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="grid" style="margin-top:56px">
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <h3>One clock, not two</h3>
+            <p>Your phone's clock is covered by the exact bit of wallpaper behind it, so it simply disappears.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Depth that really works</h3>
+            <p>The subject of your photo stays in front of the clock, just like on the home screen.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-unlock"/></svg></span>
+            <h3>Gone the moment you unlock</h3>
+            <p>The cover leaves the instant you start unlocking, so your home screen appears cleanly. You can add a few frames of delay if you like.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+            <h3>Everything from Atmo Engine</h3>
+            <p>All the effects, playlists, clock styles and Fine tuning from the free app come with it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">How it works</span>
+          <h2>Set up in about a minute</h2>
+          <p class="muted">
+            Pro uses Android's accessibility permission for one thing only: putting a small window over your
+            phone's clock on the lock screen. That window shows the part of your Atmo wallpaper that sits
+            underneath, with its clock. It doesn't read your screen, see your notifications or what you type,
+            or tap anything for you. Your photos never leave your phone.
+          </p>
+        </div>
+        <ol class="steps">
+          <li class="card reveal"><h3>Open Pro Tools</h3><p>Open Atmo Engine Pro and tap the sparkle button next to settings.</p></li>
+          <li class="card reveal"><h3>Turn on the permission</h3><p>Pro Tools walks you through it, including Android's "allow restricted settings" step.</p></li>
+          <li class="card reveal"><h3>Cover your phone's clock</h3><p>Drag the cover over it. The clock's style, colour and position are set in Fine tuning, the same as always.</p></li>
+        </ol>
+        <p class="muted small reveal" style="margin-top:20px">
+          Pro isn't on Google Play, because Play only allows this permission for accessibility tools. You install it straight from this site.
+        </p>
+      </div>
+    </section>
+
+    <section id="requirements">
+      <div class="wrap two-col">
+        <div class="card reveal">
+          <span class="kicker">What you need</span>
+          <h2 style="font-size:28px">Requirements</h2>
+          <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Android 13 or newer. The instant hide on unlock needs Android 14 or newer; on Android 13 the cover leaves a moment later.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>An Atmo wallpaper on your lock screen, with its clock turned on.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>The accessibility permission for Atmo Engine Pro. Since Pro comes from outside Google Play, Android first asks you to <strong>allow restricted settings</strong> for it. The app shows you how.</span></li>
+          </ul>
+        </div>
+        <div class="stack">
+          <div class="note reveal">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <p>Every phone maker does the lock screen a little differently, and on a few phones nothing can be drawn over it. If Pro doesn't work on your phone, you get your money back. See the <a href="refund.html">refund policy</a>.</p>
+          </div>
+          <div class="note reveal">
+            <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+            <p>A heads-up about banking apps: a few banking and payment apps refuse to open, or show a warning, while any accessibility service is turned on. That's their own security rule, and it applies to every app that uses accessibility, not just Pro. See the FAQ below for what to do.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="buying">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="kicker">Buying</span>
+          <h2>Four steps from purchase to your lock screen</h2>
+        </div>
+        <ol class="steps">
+          <li class="card reveal"><h3>Buy on Gumroad</h3><p><a href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro on Gumroad</a>. You can pay by card or PayPal, and Gumroad adds any sales tax or VAT for your country.</p></li>
+          <li class="card reveal"><h3>Get your key</h3><p>Your receipt email takes you to your licence key and the app download. Both also stay in your <a href="https://app.gumroad.com/library">Gumroad library</a>.</p></li>
+          <li class="card reveal"><h3>Install the app</h3><p>The first time, Android asks you to allow installs from your browser or files app, and Google Play Protect may offer to scan it. That's normal for apps from outside Google Play.</p></li>
+          <li class="card reveal"><h3>Activate</h3><p>Open Atmo Engine Pro, tap the sparkle button next to settings, enter your key under <strong>Licence</strong>, and follow <strong>Getting started</strong>.</p></li>
+        </ol>
+
+        <div class="card pricing reveal" style="margin-top:56px">
+          <span class="kicker">One price</span>
+          <div class="amount">US$2.99 <small>once</small></div>
+          <p class="muted">Pay once, keep it for life.</p>
+          <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Use it on up to 3 of your own phones</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><span>Free updates, installed from inside the app</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>14 days to change your mind, no questions asked</span></li>
+          </ul>
+          <a class="button" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro on Gumroad</a>
+          <p class="small muted" style="margin:18px 0 0">
+            Already bought Pro? <a href="https://github.com/saad-khan-rind/atmo-engine-pro-site/releases/latest/download/AtmoEnginePro.apk">Download the latest version</a> and enter your key in the app.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="kicker">FAQ</span>
+          <h2>Questions people ask</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Is it a subscription?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>No. You pay once and it's yours.</p></div></details>
+          <details class="reveal"><summary>Can I use it on more than one phone?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Yes, on up to 3 of your own phones at the same time.</p></div></details>
+          <details class="reveal"><summary>I got a new phone. How do I move Pro?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Enter your key on the new phone. If all 3 places are taken, the app lists your phones and you can remove an old one right there. Reinstalling on the same phone doesn't use up a place.</p></div></details>
+          <details class="reveal"><summary>Does it need the internet?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Only now and then. You need a connection to activate. After that, Pro checks your licence and looks for updates about once a day when you're online, and keeps working offline for up to 30 days.</p></div></details>
+          <details class="reveal"><summary>Do I still need the free Atmo Engine?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>No. Pro has everything the free app has, so you only need Pro.</p></div></details>
+          <details class="reveal"><summary>Will my banking apps still work?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Most will. A few banking and payment apps won't open, or keep warning you, while any accessibility service is on, because they can't tell which ones are harmless. If one of yours does that, turn off the Atmo Engine Pro lock screen clock in your phone's accessibility settings while you use it, then turn it back on. Your wallpaper keeps working the whole time; only the lock screen clock takes a break.</p></div></details>
+          <details class="reveal"><summary>How do I get updates?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Pro checks for new versions on its own. When one is out, it lets you know with a notification and an <strong>Update available</strong> message with what's new. Tap <strong>Update</strong> and Pro downloads and installs it for you; Android asks you to confirm, and the very first time to allow Pro to install apps. Your wallpaper, settings and licence stay as they are. You can also check yourself in Pro Tools, or <a href="https://github.com/saad-khan-rind/atmo-engine-pro-site/releases/latest/download/AtmoEnginePro.apk">download the latest version</a> here any time.</p></div></details>
+          <details class="reveal"><summary>Can I try new features early?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Yes. Turn on <strong>Beta updates</strong> in Pro Tools and you'll get new versions before they're marked stable. They're usually fine, but they may have the odd rough edge. Turn it off whenever you like.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap two-col">
+        <div class="card reveal">
+          <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span>
+          <h3>Join the Pro community</h3>
+          <p class="muted">Share your lock screens, get help with setup, hear about new versions first, and suggest what Pro should do next.</p>
+          <div class="actions">
+            <a class="button" href="https://t.me/atmoenginepro"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Join on Telegram</a>
+          </div>
+          <p class="small muted" style="margin:18px 0 0">
+            Questions about a purchase or a refund? Email <a href="mailto:khansaad45678900@gmail.com">khansaad45678900@gmail.com</a> with your order number.
+          </p>
+        </div>
+        <div class="card reveal">
+          <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+          <h3>Made by Saad Ullah Khan</h3>
+          <p class="muted">Atmo Engine Pro is built by one developer in Pakistan, who also makes the free, open-source Atmo Engine.</p>
+          <ul class="link-list">
+            <li><a href="mailto:khansaad45678900@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email</a></li>
+            <li><a href="https://www.linkedin.com/in/saadullahkhan456"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+            <li><a href="https://github.com/saad-khan-rind"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+            <li><a href="https://portfolio-frontend-lovat-nine.vercel.app"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Portfolio</a></li>
+            <li><a href="https://drive.google.com/uc?export=download&amp;id=1gVGO5wOwkPiNFu0MeO5kcSgEAEfx3MQS"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Résumé</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site">
@@ -166,8 +277,17 @@
       <a href="terms.html">Terms of sale</a>
       <a href="refund.html">Refund policy</a>
       <a href="mailto:khansaad45678900@gmail.com">Contact</a>
+      <a href="https://t.me/atmoenginepro">Telegram</a>
       <p>Atmo Engine Pro is made by Saad Ullah Khan, Pakistan.</p>
     </div>
   </footer>
+
+  <script>
+    // Fades sections in as they scroll into view; without JS they're simply shown.
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }, { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>
