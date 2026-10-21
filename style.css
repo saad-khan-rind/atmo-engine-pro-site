@@ -277,12 +277,12 @@ h1 {
 .phone::before {
   content: "";
   position: absolute;
-  top: 22px;
+  top: 24px;
   left: 50%;
-  width: 26%;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   transform: translateX(-50%);
-  border-radius: 999px;
+  border-radius: 50%;
   background: #050507;
   z-index: 3;
 }
@@ -306,10 +306,11 @@ h1 {
 .screen.art { background: linear-gradient(170deg, #2b1630 0%, #7a2a4f 42%, #d9705a 76%, #f4c07a 100%); }
 .screen.art .glow.a { background: radial-gradient(closest-side, rgba(255, 196, 120, 0.55), transparent); }
 .screen.art .glow.b { background: radial-gradient(closest-side, rgba(244, 114, 182, 0.55), transparent); }
-.screen .glow.c, .screen .glow.d { aspect-ratio: 1; animation: drift 14s var(--ease) infinite alternate, pulse 0.9s ease-in-out infinite alternate; }
+.screen.art .glow { will-change: transform, scale; }
+.screen .glow.c, .screen .glow.d { aspect-ratio: 1; animation: drift 14s ease-in-out infinite alternate, pulse 1.4s ease-in-out infinite alternate; }
 .screen .glow.c { width: 34%; top: 52%; left: 8%; background: radial-gradient(closest-side, rgba(255, 220, 150, 0.8), transparent); }
-.screen .glow.d { width: 26%; top: 68%; right: 10%; background: radial-gradient(closest-side, rgba(255, 130, 180, 0.75), transparent); animation-duration: 11s, 1.1s; }
-@keyframes pulse { from { scale: 1; } to { scale: 1.2; } }
+.screen .glow.d { width: 26%; top: 68%; right: 10%; background: radial-gradient(closest-side, rgba(255, 130, 180, 0.75), transparent); animation-duration: 11s, 1.7s; }
+@keyframes pulse { from { scale: 1; } to { scale: 1.15; } }
 .np-chip {
   position: absolute;
   left: 50%;
@@ -324,8 +325,7 @@ h1 {
   font-weight: 600;
   white-space: nowrap;
   color: #fff;
-  background: rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.35);
 }
 .np-chip .icon { width: 5.5cqi; height: 5.5cqi; }
 .np { align-items: center; gap: 48px; }
@@ -421,7 +421,9 @@ h3 { font-size: 19px; letter-spacing: -0.01em; margin: 0 0 6px; }
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 600px; margin: 0 auto; }
 .compare figure { margin: 0; text-align: center; }
 .compare .phone { width: 100%; max-width: 240px; border-radius: 38px; padding: 10px; }
-.compare .phone::before { top: 18px; height: 16px; }
+.compare .phone::before { top: 18px; width: 11px; height: 11px; }
+/* The comparison holds still, so the two clocks are what changes. */
+.compare .screen .glow { animation: none; }
 .compare .screen { border-radius: 29px; }
 .compare figcaption { margin-top: 16px; font-weight: 600; }
 .compare figcaption span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
