@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Atmo Engine Pro: your wallpaper's clock on your lock screen</title>
-  <meta name="description" content="Atmo Engine Pro puts your Atmo wallpaper's own clock on your Android lock screen, with the depth effect, in place of your phone's clock.">
+  <title>Atmo Engine Pro: your wallpaper's clock and your music on your lock screen</title>
+  <meta name="description" content="Atmo Engine Pro puts your Atmo wallpaper's own clock on your Android lock screen, with the depth effect, in place of your phone's clock. While music plays, your wallpaper becomes the album art.">
   <meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#faf7ff" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Atmo Engine Pro">
@@ -33,6 +33,7 @@
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
     <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
@@ -48,6 +49,7 @@
       <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="30" height="30">Atmo Engine Pro</a>
       <nav aria-label="Main">
         <a class="optional" href="#features" data-section="features">Features</a>
+        <a class="optional" href="#now-playing" data-section="now-playing">Now Playing</a>
         <a class="optional" href="#requirements" data-section="requirements">Requirements</a>
         <a class="optional" href="#releases" data-section="releases">Releases</a>
         <a class="optional" href="#faq" data-section="faq">FAQ</a>
@@ -66,7 +68,7 @@
           <p class="lead">
             Atmo Engine Pro hides your phone's own lock screen clock behind a piece of your wallpaper,
             so the only clock you see is Atmo's: the style you picked, with the person or object in
-            your photo standing in front of it.
+            your photo standing in front of it. And while music plays, your wallpaper becomes the album art.
           </p>
           <div class="actions">
             <a class="button" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro for US$2.99</a>
@@ -122,7 +124,7 @@
           </figure>
         </div>
 
-        <div class="grid" style="margin-top:56px">
+        <div class="grid three" style="margin-top:56px">
           <article class="card feature reveal">
             <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
             <h3>One clock, not two</h3>
@@ -139,10 +141,46 @@
             <p>The cover leaves the instant you start unlocking, so your home screen appears cleanly. You can add a few frames of delay if you like.</p>
           </article>
           <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg></span>
+            <h3>Moves with your wallpaper</h3>
+            <p>The cover follows your wake transition, dims with the lock screen as it goes to sleep, and steps aside for the PIN screen and the notification shade.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <h3>Colour Fill that knows how you unlocked</h3>
+            <p>The colour spreads from the camera for face unlock, from your finger for fingerprint, and from the middle for a PIN or swipe.</p>
+          </article>
+          <article class="card feature reveal">
             <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
             <h3>Everything from Atmo Engine</h3>
             <p>All the effects, playlists, clock styles and Fine tuning from the free app come with it.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="now-playing">
+      <div class="wrap two-col np">
+        <div class="phone reveal" role="img" aria-label="A lock screen showing softened album art with glowing colour bubbles and a Now playing label">
+          <div class="screen art" aria-hidden="true">
+            <span class="glow a"></span><span class="glow b"></span><span class="glow c"></span><span class="glow d"></span>
+            <div class="stock">10:09</div>
+            <div class="np-chip"><svg class="icon"><use href="#i-music"/></svg>Now playing</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="kicker">Only in Pro</span>
+          <h2>Now Playing: your music becomes your wallpaper</h2>
+          <p class="muted">
+            While music plays, Pro turns your wallpaper into the album art, softened in the Atmosphere style,
+            with colour bubbles drifting across it. When the music stops, your photo comes back.
+          </p>
+          <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Works with every effect, on the lock screen, the home screen or both.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Turn on Pulse and the bubbles move with the beat and with the loud and quiet parts of the song.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Its own brightness, saturation, contrast, grain and pulse strength, separate from your effect's settings.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Works with any music app that shows what's playing on your lock screen.</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -153,10 +191,10 @@
           <span class="kicker">How it works</span>
           <h2>Set up in about a minute</h2>
           <p class="muted">
-            Pro uses Android's accessibility permission for one thing only: putting a small window over your
-            phone's clock on the lock screen. That window shows the part of your Atmo wallpaper that sits
-            underneath, with its clock. It doesn't read your screen, see your notifications or what you type,
-            or tap anything for you. Your photos never leave your phone.
+            Pro uses Android's accessibility permission on the lock screen only: it puts a small window over your
+            phone's clock, showing the part of your Atmo wallpaper that sits underneath, with its clock, and it
+            notices how you unlocked so Colour Fill can start from there. It doesn't read other apps, see your
+            notifications or what you type, or tap anything for you. Your photos never leave your phone.
           </p>
         </div>
         <ol class="steps">
@@ -178,6 +216,7 @@
           <ul class="checks">
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Android 13 or newer. The instant hide on unlock needs Android 14 or newer; on Android 13 the cover leaves a moment later.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>An Atmo wallpaper on your lock screen, with its clock turned on.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>For Now Playing: notification access, so Pro can see what's playing, and the microphone permission only if you turn on Pulse.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>The accessibility permission for Atmo Engine Pro. Since Pro comes from outside Google Play, Android first asks you to <strong>allow restricted settings</strong> for it. The app shows you how.</span></li>
           </ul>
         </div>
@@ -245,6 +284,7 @@
           <h2>Questions people ask</h2>
         </div>
         <div class="faq">
+          <details class="reveal"><summary>Why does Now Playing ask for notification access and the microphone?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Android only tells an app what music is playing, and gives it the album art, through notification access. Pro reads the song and its art from there and reads none of your notifications. The microphone permission is needed only for Pulse, because it is the only way Android lets an app follow the sound your phone is playing. Pro never listens through the microphone itself, and nothing is recorded, saved or sent.</p></div></details>
           <details class="reveal"><summary>Is it a subscription?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>No. You pay once and it's yours.</p></div></details>
           <details class="reveal"><summary>Can I use it on more than one phone?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Yes, on up to 3 of your own phones at the same time.</p></div></details>
           <details class="reveal"><summary>I got a new phone. How do I move Pro?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div><p>Enter your key on the new phone. If all 3 places are taken, the app lists your phones and you can remove an old one right there. Reinstalling on the same phone doesn't use up a place.</p></div></details>
@@ -313,7 +353,7 @@
     // The header (wide screens) and the bottom bar (phones) mark the section being read.
     const tabs = document.querySelectorAll("a[data-section]");
     const sections = {
-      home: document.querySelector(".hero"), features: "features", requirements: "requirements",
+      home: document.querySelector(".hero"), features: "features", "now-playing": "now-playing", requirements: "requirements",
       releases: "releases", faq: "faq", community: "contact"
     };
     const spy = new IntersectionObserver((entries) => {

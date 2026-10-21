@@ -3,8 +3,9 @@
 **Live site:** https://saad-khan-rind.github.io/atmo-engine-pro-site/
 (the app's "Get a licence key" button links here)
 
-The public website for Atmo Engine Pro: product page, pricing, and the privacy,
-terms and refund policies. This repository's Releases also hold the app itself.
+The public website for Atmo Engine Pro: product page (the lock screen clock,
+Now Playing and Pro's other features), pricing, and the privacy, terms and
+refund policies. This repository's Releases also hold the app itself.
 
 ## How it's wired
 
