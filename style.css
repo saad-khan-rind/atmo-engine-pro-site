@@ -422,8 +422,8 @@ h3 { font-size: 19px; letter-spacing: -0.01em; margin: 0 0 6px; }
 .compare figure { margin: 0; text-align: center; }
 .compare .phone { width: 100%; max-width: 240px; border-radius: 38px; padding: 10px; }
 .compare .phone::before { top: 18px; width: 11px; height: 11px; }
-/* The comparison holds still, so the two clocks are what changes. */
-.compare .screen .glow { animation: none; }
+/* Only Now Playing's art moves; the clock mock-ups hold still. */
+.screen:not(.art) .glow { animation: none; }
 .compare .screen { border-radius: 29px; }
 .compare figcaption { margin-top: 16px; font-weight: 600; }
 .compare figcaption span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
