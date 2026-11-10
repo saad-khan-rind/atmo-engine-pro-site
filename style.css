@@ -329,6 +329,40 @@ h1 {
 }
 .np-chip .icon { width: 5.5cqi; height: 5.5cqi; }
 .np { align-items: center; gap: 48px; }
+
+/* Spatial: the sky and the mountains sway apart as if the phone tilts; the clock holds still. */
+.screen.spatial { background: none; }
+.screen.spatial .backdrop {
+  position: absolute;
+  inset: -6%;
+  background: linear-gradient(180deg, #1d1446 0%, #4b1d6b 45%, #b44a8d 78%, #f19a8b 100%);
+  animation: tilt-back 7s ease-in-out infinite alternate;
+}
+.screen.spatial .subject { width: 124%; left: -12%; height: 76%; bottom: -4%; animation: tilt-front 7s ease-in-out infinite alternate; }
+@keyframes tilt-back { from { translate: 2.7% 1.2%; } to { translate: -2.7% -1.2%; } }
+@keyframes tilt-front { from { translate: -6% -2.6%; } to { translate: 6% 2.6%; } }
+
+/* Music widget: a 2 by 2 card of album art with a dot waveform. */
+.widget-mock { display: grid; place-items: center; }
+.widget-card {
+  position: relative;
+  width: min(240px, 62vw);
+  aspect-ratio: 1;
+  border-radius: 28%;
+  overflow: hidden;
+  background: linear-gradient(150deg, #2b1630 0%, #7a2a4f 45%, #d9705a 80%, #f4c07a 100%);
+  box-shadow: var(--shadow), inset 0 0 0 1.5px rgba(255, 255, 255, 0.12);
+  container-type: inline-size;
+}
+.widget-card .glow { position: absolute; border-radius: 50%; }
+.widget-card .glow.a { width: 80%; aspect-ratio: 1; top: -20%; left: -20%; background: radial-gradient(closest-side, rgba(255, 196, 120, 0.5), transparent); }
+.widget-card .glow.b { width: 70%; aspect-ratio: 1; bottom: -20%; right: -20%; background: radial-gradient(closest-side, rgba(244, 114, 182, 0.5), transparent); }
+.widget-card .wave { position: absolute; left: 12%; right: 12%; bottom: 14%; display: flex; justify-content: space-between; align-items: center; height: 22%; }
+.widget-card .wave i { width: 4.6cqi; height: 4.6cqi; border-radius: 50%; background: #fff; animation: dot 1.2s ease-in-out infinite alternate; }
+.widget-card .wave i:nth-child(3n) { animation-delay: -0.4s; }
+.widget-card .wave i:nth-child(3n+1) { animation-delay: -0.8s; }
+.widget-card .wave i:nth-child(4n) { animation-duration: 0.9s; }
+@keyframes dot { from { translate: 0 -120%; } to { translate: 0 120%; } }
 @media (max-width: 820px) { .np { gap: 32px; } }
 
 .screen .date {

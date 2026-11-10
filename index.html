@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Atmo Engine Pro: your wallpaper's clock and your music on your lock screen</title>
-  <meta name="description" content="Atmo Engine Pro puts your Atmo wallpaper's own clock on your Android lock screen, with the depth effect, in place of your phone's clock. While music plays, your wallpaper becomes the album art.">
+  <meta name="description" content="Atmo Engine Pro puts your Atmo wallpaper's own clock on your Android lock screen, with the depth effect, in place of your phone's clock. Your photo moves in 3D as you tilt your phone, your wallpaper becomes the album art while music plays, and a music widget sits on your home screen.">
   <meta name="theme-color" content="#0b0a12" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#faf7ff" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Atmo Engine Pro">
@@ -49,6 +49,7 @@
       <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="30" height="30">Atmo Engine Pro</a>
       <nav aria-label="Main">
         <a class="optional" href="#features" data-section="features">Features</a>
+        <a class="optional" href="#spatial" data-section="spatial">Spatial</a>
         <a class="optional" href="#now-playing" data-section="now-playing">Now Playing</a>
         <a class="optional" href="#requirements" data-section="requirements">Requirements</a>
         <a class="optional" href="#releases" data-section="releases">Releases</a>
@@ -68,7 +69,8 @@
           <p class="lead">
             Atmo Engine Pro hides your phone's own lock screen clock behind a piece of your wallpaper,
             so the only clock you see is Atmo's: the style you picked, with the person or object in
-            your photo standing in front of it. And while music plays, your wallpaper becomes the album art.
+            your photo standing in front of it. Tilt your phone and your photo moves in 3D. And while music
+            plays, your wallpaper becomes the album art.
           </p>
           <div class="actions">
             <a class="button" href="https://khansaad5.gumroad.com/l/atmo-engine-pro">Buy Pro for US$2.99</a>
@@ -141,6 +143,21 @@
             <p>While music plays, your wallpaper becomes the album art, with colour bubbles that drift and pulse with the beat. <a href="#now-playing">See how it looks</a>.</p>
           </article>
           <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Spatial wallpaper</h3>
+            <p>Tilt your phone and the subject of your photo moves apart from the background, so it looks three dimensional. <a href="#spatial">See how it works</a>.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg></span>
+            <h3>Music widget</h3>
+            <p>A small home screen widget in Nothing's style, with the album cover, a dot waveform and tap to play, pause or skip. <a href="#widget">Take a look</a>.</p>
+          </article>
+          <article class="card feature reveal">
+            <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h3>Your choice of music apps</h3>
+            <p>Pick which apps Now Playing and the music widget follow, and whether new music apps join in on their own.</p>
+          </article>
+          <article class="card feature reveal">
             <span class="badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg></span>
             <h3>Moves with your wallpaper</h3>
             <p>The cover follows your wake transition, dims with the lock screen as it goes to sleep, and steps aside for the PIN screen and the notification shade.</p>
@@ -155,6 +172,34 @@
             <h3>Everything from Atmo Engine</h3>
             <p>All the effects, playlists, clock styles and Fine tuning from the free app come with it.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spatial">
+      <div class="wrap two-col np">
+        <div class="reveal">
+          <span class="kicker">Only in Pro</span>
+          <h2>Spatial wallpaper: your photo in 3D</h2>
+          <p class="muted">
+            As you tilt your phone, the person or object in your photo moves one way and the background
+            moves the other, while your clock stays put between them. It looks like the photo has real depth.
+          </p>
+          <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Works with every effect, smoothly at your screen's full refresh rate.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>The Adaptive clock moves its digits around the subject as it shifts, live.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Optional generative fill: a small AI model paints in what was hidden behind the subject, right on your phone. Your photo never leaves it.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Choose how deep it looks, and fine tune how the subject is cut out for photos that need it.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Only runs while your photo is sharp on screen, so the battery barely notices.</span></li>
+          </ul>
+        </div>
+        <div class="phone reveal" role="img" aria-label="A lock screen where the mountains in front and the sky behind move apart while the clock stays still">
+          <div class="screen spatial" aria-hidden="true">
+            <div class="backdrop"><span class="glow a"></span><span class="glow b"></span></div>
+            <div class="date">FRIDAY, 10 OCTOBER</div>
+            <div class="clock">10:09</div>
+            <svg class="subject"><use href="#mountain"/></svg>
+          </div>
         </div>
       </div>
     </section>
@@ -179,6 +224,30 @@
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Turn on Pulse and the bubbles move with the beat and with the loud and quiet parts of the song.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Its own brightness, saturation, contrast, grain and pulse strength, separate from your effect's settings.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Works with any music app that shows what's playing on your lock screen.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="widget">
+      <div class="wrap two-col np">
+        <div class="widget-mock reveal" role="img" aria-label="A square home screen widget showing album art with a row of dots as a waveform">
+          <div class="widget-card" aria-hidden="true">
+            <span class="glow a"></span><span class="glow b"></span>
+            <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="kicker">Only in Pro</span>
+          <h2>A music widget for your home screen</h2>
+          <p class="muted">
+            A 2 by 2 widget in the style of Nothing's own: the album cover with a dot waveform that moves with the song.
+          </p>
+          <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Tap to play or pause, tap the edges to skip.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Swipe up for the song, the artist and how far along it is.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Remembers your last song, and opens your music app with a tap once it has closed.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Follows any music app, or just the ones you pick.</span></li>
           </ul>
         </div>
       </div>
@@ -215,7 +284,8 @@
           <ul class="checks">
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Android 13 or newer. The instant hide on unlock needs Android 14 or newer; on Android 13 the cover leaves a moment later.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>An Atmo wallpaper on your lock screen, with its clock turned on.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>For Now Playing: notification access, so Pro can see what's playing, and the microphone permission only if you turn on Pulse.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>For Spatial wallpaper: the subject model, downloaded in Fine tuning, and a single image rather than a playlist. Generative fill is an optional 16 MB download.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>For Now Playing and the music widget: notification access, so Pro can see what's playing, and the microphone permission only if you turn on Pulse.</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>The accessibility permission for Atmo Engine Pro. Since Pro comes from outside Google Play, Android first asks you to <strong>allow restricted settings</strong> for it. The app shows you how.</span></li>
           </ul>
         </div>
@@ -352,7 +422,7 @@
     // The header (wide screens) and the bottom bar (phones) mark the section being read.
     const tabs = document.querySelectorAll("a[data-section]");
     const sections = {
-      home: document.querySelector(".hero"), features: "features", "now-playing": "now-playing", requirements: "requirements",
+      home: document.querySelector(".hero"), features: "features", spatial: "spatial", "now-playing": "now-playing", requirements: "requirements",
       releases: "releases", faq: "faq", community: "contact"
     };
     const spy = new IntersectionObserver((entries) => {
